@@ -29,7 +29,19 @@ var TodoRenderer = (function (renderer) {
     }
 
     function createTemplateTaskElement(task) {
-        return '<p>' + task.description + '</p>' + '<p>' + task.priority + '</p>';
+        return `<tr>
+            <td class="todo-description">${task.description}</td>
+            <td class="todo-priority">${task.priority}</td>
+            <td class="is-done-checkbox">
+                <label>
+                    <input type="checkbox">
+                </label>
+            </td>
+            <td><button type="submit" class="btn btn-block btn-danger">
+                    X
+                </button>
+            </td>
+        </tr>`
     }
 
     return renderer;
