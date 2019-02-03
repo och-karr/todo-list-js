@@ -1,0 +1,7 @@
+.style-task-container { background-color: grey; padding: 5px; margin: 20px 0; }
+
+.style-task-container .style-table { background-color: white; margin: 0; }
+
+.style-task-container .style-table .style-thead { color: white; background-color: black; }
+
+.style-task-container .style-table .style-thead .style-th { border: none; }

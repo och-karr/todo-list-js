@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row justify-content-md-center">
+
+            <div class="col-sm-12 col-md-8">
+
+                <section class="todo-app">
+
+                    <h3 class="card-header">
+                        Todo List
+                    </h3>
+
+                    <!-- Task form -->
+                    <form class="form-container">
+
+                        <div class="form-group">
+                            <label for="todo-input">Type your task</label>
+                            <input type="text" class="form-control" id="todo-input" placeholder="Type your task">
+                        </div>
+                        <div class="form-group">
+                            <label for="select-priority">Select priority</label>
+                            <select class="form-control" id="select-priority">
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-success" id="dd-todo-btn" onclick="TodoView.addTodo()">Add</button>
+
+                    </form>
+
+
+                    <!-- Task list -->
+                    <div class="task-container style-task-container">
+
+                        <table class="table style-table">
+                            <thead class="style-thead">
+                                <tr>
+                                    <th class=" style-th col-sm-8" scope="col">Task name</th>
+                                    <th class=" style-th col-sm-2" scope="col">Priority</th>
+                                    <th class="style-th col-sm-1" scope="col">Done</th>
+                                    <th class="style-th col-sm-1" scope="col">X</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todo-list-root">
+                                <tr>
+                                    <td class="todo-description">${todo.description}</td>
+                                    <td class="todo-priority">${todo.priority}</td>
+                                    <td class="is-done-checkbox">
+                                        <label>
+                                            <input type="checkbox">
+                                        </label>
+                                    </td>
+                                    <td><button type="submit" class="btn btn-block btn-danger">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>

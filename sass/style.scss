@@ -1,0 +1,19 @@
+.style-task-container {
+    background-color: grey;
+    padding: 5px;
+    margin: 20px 0;
+
+    .style-table {
+        background-color: white;
+        margin: 0;
+
+        .style-thead {
+            color: white;
+            background-color: black;
+
+            .style-th {
+                border: none;
+            }
+        }
+    }
+}
