@@ -24,8 +24,8 @@
                         Todo List
                     </h3>
 
-                    <!-- Task form -->
-                    <form class="form-container">
+
+                    <div class="form-container">
 
                         <div class="form-group">
                             <label for="todo-input">Type your task</label>
@@ -41,10 +41,9 @@
                         </div>
                         <button type="submit" class="btn btn-block btn-success" id="add-todo-btn" onclick="TodoView.addTodo()">Add</button>
 
-                    </form>
+                    </div>
 
 
-                    <!-- Task list -->
                     <div class="task-container style-task-container">
 
                         <table class="table style-table">
@@ -74,6 +73,7 @@
 
     <script src="js/Todo.js"></script>
     <script src="js/TodoView.js"></script>
+    <script src="js/TodoService.js"></script>
     <script src="js/TodoRenderer.js"></script>
 </body>
 

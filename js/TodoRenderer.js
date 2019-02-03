@@ -34,7 +34,8 @@ var TodoRenderer = (function (renderer) {
             <td class="todo-priority">${task.priority}</td>
             <td class="is-done-checkbox">
                 <label>
-                    <input type="checkbox" onclick="TodoView.changeState(this, ${task.id})">
+                    <input type="checkbox" onclick="TodoView.changeState(this, ${task.id});" 
+                    ${ task.isCompleted ? 'checked' : ''}>
                 </label>
             </td>
             <td><button type="submit" class="btn btn-block btn-danger" onclick="TodoView.deleteTodo(${task.id})">

@@ -1,32 +1,40 @@
-var TodoView = (function(view) {
- 
-    var todos = [
-        new Todo('create an application', 'High'),
-        new Todo('eat something tasty', 'Medium'),
-        new Todo('Drink a beer', 'Low')
-    ];
- 
-    view.getTodos = function() {
-        return todos;
+var TodoView = (function (view) {
+
+    var addTodoInput = document.getElementById('todo-input');
+    var addTodoSelect = document.getElementById('select-priority');
+
+    view.getTodos = function () {
+        return TodoService.getTasks();
     }
- 
-    view.addTodo = function() {
-        alert('add!');
+
+    view.addTodo = function () {
+        TodoService.addTask(addTodoInput.value, addTodoSelect.value);
+        addTodoInput.value = '';
+
+        updateView();
     };
- 
-    view.deleteTodo = function(todoId) {
-        alert('delete!');
+
+    view.deleteTodo = function (todoId) {
+        TodoService.deleteTask(todoId);
+
+        updateView();
     };
- 
-    view.changeState = function(checkbox, todoId) {
-        alert('toggle!');
+
+    view.isChecked = function (checkbox, todoId) {
+        TodoService.isDone(checkbox.checked, todoId);
+
+        updateView();
     };
- 
+
+
+    function updateView() {
+        TodoRenderer.renderList(TodoService.getTasks());
+    }
+
     return view;
- 
+
 })(TodoView || {});
 
-
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     TodoRenderer.renderList(TodoView.getTodos());
 });
