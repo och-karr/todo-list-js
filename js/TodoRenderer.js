@@ -34,10 +34,10 @@ var TodoRenderer = (function (renderer) {
             <td class="todo-priority">${task.priority}</td>
             <td class="is-done-checkbox">
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" onclick="TodoView.changeState(this, ${task.id})">
                 </label>
             </td>
-            <td><button type="submit" class="btn btn-block btn-danger">
+            <td><button type="submit" class="btn btn-block btn-danger" onclick="TodoView.deleteTodo(${task.id})">
                     X
                 </button>
             </td>

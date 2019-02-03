@@ -1,22 +1,32 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+var TodoView = (function(view) {
  
-    // var addTodoInput = document.querySelector('#todo-input');
-    // var prioritySelect = document.querySelector('#select-priority');
-    // var addTodoBtn = document.querySelector('#add-todo-btn');
- 
-    // addTodoBtn.addEventListener('click', function (event) {
-    //     var inputValue = addTodoInput.value;
-    //     var selectValue = prioritySelect.value;
-    //     alert(inputValue);
-    //     alert(selectValue);
-    // });
-
     var todos = [
-        new Todo('zadanie 1', 'Low'),
-        new Todo('zadanie 2', 'Low' ),
-        new Todo('zadanie 3', 'Low')
+        new Todo('create an application', 'High'),
+        new Todo('eat something tasty', 'Medium'),
+        new Todo('Drink a beer', 'Low')
     ];
  
-    TodoRenderer.renderList(todos);
+    view.getTodos = function() {
+        return todos;
+    }
  
+    view.addTodo = function() {
+        alert('add!');
+    };
+ 
+    view.deleteTodo = function(todoId) {
+        alert('delete!');
+    };
+ 
+    view.changeState = function(checkbox, todoId) {
+        alert('toggle!');
+    };
+ 
+    return view;
+ 
+})(TodoView || {});
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    TodoRenderer.renderList(TodoView.getTodos());
 });
