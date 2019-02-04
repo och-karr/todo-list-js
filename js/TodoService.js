@@ -1,6 +1,6 @@
 var TodoService = (function (service) {
 
-    var tasks = [];
+    var tasks = [new Todo('wynieść śmieci', "high"), new Todo('wynieść śmieci', "high")];
 
     service.getTasks = function () {
         return tasks;

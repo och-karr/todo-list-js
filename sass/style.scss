@@ -1,19 +1,70 @@
-.style-task-container {
-    background-color: grey;
-    padding: 5px;
+.todo-app {
+    max-width: 670px;
+}
+
+.form-container {
+    padding: 1px;
+}
+
+.task-container {
+    background-color: #edefee;
+    padding: 10px;
     margin: 20px 0;
 
     .style-table {
         background-color: white;
         margin: 0;
+        border: 1px solid #d1d1d1;
 
         .style-thead {
             color: white;
-            background-color: black;
+            background-color: #47422c;
 
             .style-th {
                 border: none;
+                font-weight: normal;
+                font-size: 14px;
+                box-sizing: border-box;
+                height: 50px;
+                padding-top: 0;
+                padding-bottom: 0;
+                line-height: 50px;
+
             }
+
+            .task-name-th {
+                width: 60%;
+            }
+
+            .priority-th {
+                width: 20%;
+            }
+        }
+    }
+}
+
+.task-row {
+    font-size: 14px;
+
+    .cell {
+        padding-top: 6px;
+        padding-bottom: 0;
+        line-height: 45px;
+        border-color: #d1d1d1;
+    }
+
+    .trash-visible {
+        display: none;
+    }
+
+    &:hover {
+
+        .trash-visible {
+            display: block;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 45px;
+            height: 45px;
         }
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo List</title>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -39,21 +39,22 @@
                                 <option>High</option>
                             </select>
                         </div>
+                                
                         <button type="submit" class="btn btn-block btn-success" id="add-todo-btn" onclick="TodoView.addTodo()">Add</button>
 
                     </div>
 
 
-                    <div class="task-container style-task-container">
+                    <div class="task-container">
 
                         <table class="table style-table">
 
                             <thead class="style-thead">
-                                <tr>
-                                    <th class=" style-th col-sm-8" scope="col">Task name</th>
-                                    <th class=" style-th col-sm-2" scope="col">Priority</th>
-                                    <th class="style-th col-sm-1" scope="col">Done</th>
-                                    <th class="style-th col-sm-1" scope="col">X</th>
+                                <tr class="style-heading-tr">
+                                    <th class="style-th task-name-th" scope="col">Task name</th>
+                                    <th class="style-th priority-th" scope="col">Priority</th>
+                                    <th class="style-th done-th" scope="col">Done</th>
+                                    <th class="style-th delete-th" scope="col"></th>
                                 </tr>
                             </thead>
 

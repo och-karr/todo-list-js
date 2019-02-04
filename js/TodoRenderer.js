@@ -29,18 +29,16 @@ var TodoRenderer = (function (renderer) {
     }
 
     function createTemplateTaskElement(task) {
-        return `<tr>
-            <td class="todo-description">${task.description}</td>
-            <td class="todo-priority">${task.priority}</td>
-            <td class="is-done-checkbox">
+        return `<tr class="task-row">
+            <td class="cell todo-description">${task.description}</td>
+            <td class="cell todo-priority">${task.priority}</td>
+            <td class="cell is-checked-checkbox">
                 <label>
-                    <input type="checkbox" onclick="TodoView.changeState(this, ${task.id});" 
+                    <input type="checkbox" onclick="TodoView.isChecked(this, ${task.id});" 
                     ${ task.isCompleted ? 'checked' : ''}>
                 </label>
             </td>
-            <td><button type="submit" class="btn btn-block btn-danger" onclick="TodoView.deleteTodo(${task.id})">
-                    X
-                </button>
+            <td class="cell"><div class="trash-container"><i class="fas fa-trash-alt trash-visible" onclick="TodoView.deleteTodo(${task.id})"></i></div>
             </td>
         </tr>`
     }
@@ -48,3 +46,5 @@ var TodoRenderer = (function (renderer) {
     return renderer;
 
 })(TodoRenderer || {});
+
+// onclick="TodoView.deleteTodo(${task.id})"
