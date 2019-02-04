@@ -28,6 +28,7 @@ var TodoView = (function (view) {
 
 
     function updateView() {
+        UpdateLocalStorage.saveTaskInLocalStorage(TodoService.getTasks());
         TodoRenderer.renderList(TodoService.getTasks());
     }
 
@@ -36,5 +37,6 @@ var TodoView = (function (view) {
 })(TodoView || {});
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    TodoService.updateTasks();
     TodoRenderer.renderList(TodoView.getTodos());
 });

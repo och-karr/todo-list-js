@@ -1,13 +1,18 @@
 var TodoService = (function (service) {
 
-    var tasks = [new Todo('wynieść śmieci', "high"), new Todo('wynieść śmieci', "high")];
+    var tasks = [];
+
+    service.updateTasks = function () {
+        tasks = UpdateLocalStorage.getTasksFromLocalStorage();
+    }
 
     service.getTasks = function () {
         return tasks;
     }
 
     service.addTask = function (description, priority) {
-        tasks.push(new Todo(description, priority));
+        var todo = new Todo(description, priority);
+        tasks.push(todo);
     }
 
     service.deleteTask = function (todoId) {
