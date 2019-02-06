@@ -33,9 +33,10 @@ var TodoRenderer = (function (renderer) {
             <td class="cell todo-description">${task.description}</td>
             <td class="cell todo-priority">${task.priority}</td>
             <td class="cell is-checked-checkbox">
-                <label>
-                    <input type="checkbox" onclick="TodoView.isChecked(this, ${task.id});" 
+                <label class="checkbox-label">
+                    <input type="checkbox" class="is-checked-checkbox-input" onclick="TodoView.isChecked(this, ${task.id});" 
                     ${ task.isCompleted ? 'checked' : ''}>
+                    <span class="checkmark"></span>
                 </label>
             </td>
             <td class="cell"><div class="trash-container"><i class="fas fa-trash-alt trash-visible" onclick="TodoView.deleteTodo(${task.id})"></i></div>

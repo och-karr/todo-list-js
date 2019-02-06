@@ -1,26 +1,39 @@
+$table-headings-color: #47422c;
+$table-and-cell-border-color: #d1d1d1;
+$checkmark-border-color: #a9a9a9;
+$task-container-color: #edefee;
+$white-color: #ffffff;
+$checked-checkbox-color: #f79818;
+
+/*-----TODO APP STYLES-----*/
+
 .todo-app {
     max-width: 670px;
 }
+
+/*-----FORM CONTAINER STYLES-----*/
 
 .form-container {
     padding: 1px;
 }
 
+/*-----TASK CONTAINER STYLES - WHOLE CONTAINER AND HEADINGS-----*/
+
 .task-container {
-    background-color: #edefee;
+    background-color: $task-container-color;
     padding: 10px;
     margin: 20px 0;
 
     .style-table {
-        background-color: white;
+        background-color: $white-color;
         margin: 0;
-        border: 1px solid #d1d1d1;
+        border: 1px solid $table-and-cell-border-color;
 
         .style-thead {
-            color: white;
-            background-color: #47422c;
+            color: $white-color;
+            background-color: $table-headings-color;
 
-            .style-th {
+            .style-heading-tr .style-th {
                 border: none;
                 font-weight: normal;
                 font-size: 14px;
@@ -30,6 +43,9 @@
                 padding-bottom: 0;
                 line-height: 50px;
 
+                .th-icon {
+                    padding-left: 15px;
+                }
             }
 
             .task-name-th {
@@ -43,6 +59,8 @@
     }
 }
 
+/*-----TASK CONTAINER STYLES - ROWS-----*/
+
 .task-row {
     font-size: 14px;
 
@@ -50,8 +68,59 @@
         padding-top: 6px;
         padding-bottom: 0;
         line-height: 45px;
-        border-color: #d1d1d1;
+        border-color: $table-and-cell-border-color;
     }
+
+    /*-----CHECKBOX STYLES-----*/
+
+    .is-checked-checkbox {
+
+        .checkbox-label {
+            position: relative;
+            padding-bottom: 7px;
+            cursor: pointer;
+
+            .is-checked-checkbox-input {
+
+                display: none;
+
+                &:checked ~ .checkmark {
+                   
+                    background-color: $checked-checkbox-color;
+                    border-color: $checked-checkbox-color;
+
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 16px;
+                width: 16px;
+                border: 2px solid $checkmark-border-color;
+                border-radius: 10%;
+        
+                &:after {
+                    left: 4px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid $white-color;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+        
+                    content: "";
+                        position: absolute;
+                        display: none;
+                }
+            }
+        }    
+    }
+
+    /*-----TRASH STYLES-----*/
 
     .trash-visible {
         display: none;
