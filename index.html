@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo List</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -34,12 +35,12 @@
                         <div class="form-group">
                             <label for="select-priority">Select priority</label>
                             <select class="form-control" id="select-priority">
-                                <option>Low</option>
-                                <option>Medium</option>
-                                <option>High</option>
+                                <option class="o-first">Low</option>
+                                <option class="o-sec">Medium</option>
+                                <option class="o-third">High</option>
                             </select>
                         </div>
-                                
+
                         <button type="submit" class="btn btn-block btn-success" id="add-todo-btn" onclick="TodoView.addTodo()">Add</button>
 
                     </div>
@@ -47,13 +48,14 @@
 
                     <div class="task-container">
 
-                        <table class="table style-table">
+                        <table class="table style-table" id="myTable">
 
                             <thead class="style-thead">
                                 <tr class="style-heading-tr">
-                                    <th class="style-th task-name-th" scope="col">Task name</th>
-                                    <th class="style-th priority-th" scope="col">Priority</th>
-                                    <th class="style-th done-th" scope="col">Done</th>
+                                    <th class="style-th task-name-th" scope="col" onclick="TodoView.sortByName()">Task
+                                        name</th>
+                                    <th class="style-th priority-th" scope="col" onclick="TodoView.sortByPriority()">Priority</th>
+                                    <th class="style-th done-th" scope="col" onclick="TodoView.sortByDone()">Done</th>
                                     <th class="style-th delete-th" scope="col"></th>
                                 </tr>
                             </thead>
@@ -77,6 +79,7 @@
     <script src="js/TodoService.js"></script>
     <script src="js/UpdateLocalStorage.js"></script>
     <script src="js/TodoRenderer.js"></script>
+    <script src="js/SortingFunctions.js"></script>
 </body>
 
 </html>

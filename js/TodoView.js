@@ -5,31 +5,45 @@ var TodoView = (function (view) {
 
     view.getTodos = function () {
         return TodoService.getTasks();
-    }
+    };
 
     view.addTodo = function () {
         TodoService.addTask(addTodoInput.value, addTodoSelect.value);
         addTodoInput.value = '';
 
-        updateView();
+        updateView(TodoService.getTasks());
     };
 
     view.deleteTodo = function (todoId) {
         TodoService.deleteTask(todoId);
 
-        updateView();
+        updateView(TodoService.getTasks());
     };
 
     view.isChecked = function (checkbox, todoId) {
         TodoService.isDone(checkbox.checked, todoId);
 
-        updateView();
+        updateView(TodoService.getTasks());
     };
 
+    view.sortByName = function() {
+        var sortedTable = sortTableByName(TodoService.getTasks());
+        updateView(sortedTable);
+    };
 
-    function updateView() {
-        UpdateLocalStorage.saveTaskInLocalStorage(TodoService.getTasks());
-        TodoRenderer.renderList(TodoService.getTasks());
+    view.sortByPriority = function() {
+        var sortedTable = sortTableByPriority(TodoService.getTasks());
+        updateView(sortedTable);
+    };
+
+    view.sortByDone = function() {
+        var sortedTable = sortTableByDone(TodoService.getTasks());
+        updateView(sortedTable);
+    };
+
+    function updateView(tasks) {
+        UpdateLocalStorage.saveTaskInLocalStorage(tasks);
+        TodoRenderer.renderList(tasks);
     }
 
     return view;

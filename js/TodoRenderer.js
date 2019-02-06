@@ -8,9 +8,7 @@ var TodoRenderer = (function (renderer) {
         for (var i = 0; i < tasks.length; i++) {
             createTaskElement(tasks[i]);
         }
-
     };
-
 
     function createListRoot() {
         if (!todoListRoot) {
