@@ -8,10 +8,14 @@ var TodoView = (function (view) {
     };
 
     view.addTodo = function () {
-        TodoService.addTask(addTodoInput.value, addTodoSelect.value);
-        addTodoInput.value = '';
+        if(addTodoInput.value !== "") {
+            TodoService.addTask(addTodoInput.value, addTodoSelect.value);
+            addTodoInput.value = '';
 
-        updateView(TodoService.getTasks());
+            updateView(TodoService.getTasks());
+        } else {
+            alert("empty");
+        }
     };
 
     view.deleteTodo = function (todoId) {

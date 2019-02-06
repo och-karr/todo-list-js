@@ -1,5 +1,5 @@
 /*-----TODO APP STYLES-----*/
-.todo-app { max-width: 670px; }
+.todo-app { max-width: 670px; min-width: 480px; }
 
 /*-----FORM CONTAINER STYLES-----*/
 .form-container { padding: 1px; }
@@ -17,7 +17,7 @@
 
 .task-container .style-table .style-thead .task-name-th { width: 60%; }
 
-.task-container .style-table .style-thead .priority-th { width: 20%; }
+.task-container .style-table .style-thead .priority-th { width: 17%; }
 
 /*-----TASK CONTAINER STYLES - ROWS-----*/
 .task-row { font-size: 14px; /*-----CHECKBOX STYLES-----*/ /*-----TRASH STYLES-----*/ }
@@ -39,3 +39,11 @@
 .task-row .trash-visible { display: none; }
 
 .task-row:hover .trash-visible { display: block; cursor: pointer; font-size: 18px; line-height: 45px; height: 45px; }
+
+/*-----MEDIA-----*/
+@media (max-width: 992px) { .task-container .style-table .style-thead .style-heading-tr .task-name-th { width: 44%; }
+  .task-container .style-table .style-thead .style-heading-tr .priority-th { width: 25%; } }
+
+@media (max-width: 550px) { .task-container .style-table .style-thead .style-heading-tr .style-th .th-icon { padding-left: 0; }
+  .task-row:hover .trash-visible { font-size: 14px; }
+  .trash-visible { font-size: 10px; } }
