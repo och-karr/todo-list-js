@@ -6,7 +6,7 @@ or clone this repositorium
 
 ```git clone git@github.com:och-karr/todo-list-polsource.git```
 
-open your CLI and run
+open your CLI and run 
 
 ```npm install```
 
