@@ -47,7 +47,7 @@ var isPriorityChangeOrder = true;
 
 function sortTableByPriority(todos) {
 
-  var sortedTable = [];
+  var sortedTodos = [];
   var lowPriorityTable = [];
   var mediumPriorityTable = [];
   var highPriorityTable = [];
@@ -67,20 +67,20 @@ function sortTableByPriority(todos) {
 
     isPriorityChangeOrder = false;
 
-    sortedTable = sortedTable.concat(highPriorityTable);
-    sortedTable = sortedTable.concat(mediumPriorityTable);
-    sortedTable = sortedTable.concat(lowPriorityTable);
+    sortedTodos = sortedTodos.concat(highPriorityTable);
+    sortedTodos = sortedTodos.concat(mediumPriorityTable);
+    sortedTodos = sortedTodos.concat(lowPriorityTable);
 
   } else {
 
     isPriorityChangeOrder = true;
 
-    sortedTable = sortedTable.concat(lowPriorityTable);
-    sortedTable = sortedTable.concat(mediumPriorityTable);
-    sortedTable = sortedTable.concat(highPriorityTable);
+    sortedTodos = sortedTodos.concat(lowPriorityTable);
+    sortedTodos = sortedTodos.concat(mediumPriorityTable);
+    sortedTodos = sortedTodos.concat(highPriorityTable);
   }
 
-  return sortedTable;
+  return sortedTodos;
 }
 
 

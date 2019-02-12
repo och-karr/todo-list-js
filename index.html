@@ -52,15 +52,36 @@
 
                             <thead class="style-thead">
                                 <tr class="style-heading-tr">
-                                    <th class="style-th task-name-th" scope="col" onclick="TodoView.sortByName()">Task name <i class="fas fa-sort th-icon"></i></th>
-                                    <th class="style-th priority-th" scope="col" onclick="TodoView.sortByPriority()">Priority <i class="fas fa-sort th-icon"></i></th>
-                                    <th class="style-th done-th" scope="col" onclick="TodoView.sortByDone()">Done <i class="fas fa-sort th-icon"></i></th>
+                                    <th class="style-th task-name-th" scope="col" onclick="TodoView.sortByName()">Task
+                                        name <i class="fas fa-sort th-icon"></i></th>
+                                    <th class="style-th priority-th" scope="col" onclick="TodoView.sortByPriority()">Priority
+                                        <i class="fas fa-sort th-icon"></i></th>
+                                    <th class="style-th done-th" scope="col" onclick="TodoView.sortByDone()">Done <i
+                                            class="fas fa-sort th-icon"></i></th>
                                     <th class="style-th delete-th" scope="col"></th>
                                 </tr>
                             </thead>
 
                             <tbody id="todo-list-root">
                             </tbody>
+
+                            <tfoot>
+                                <tr class="tfoot-row task-row">
+                                    <td colspan="4" class="cell">
+                                        <label for="page-size">Rows per page:</label>
+                                        <select class="form-control page-size" id="page-size" onchange="TodoView.showSlicedTableAfterSizeChange()">
+                                            <option class="size-five">5</option>
+                                            <option class="size-ten">10</option>
+                                            <option class="size-fiveteen">15</option>
+                                        </select>
+                                        <span id="from-task-rows" class="num-task-rows">from-task-rows</span><span>-</span><span
+                                            id="to-task-rows" class="num-task-rows">to-task-rows</span><span>of</span><span
+                                            class="num-task-rows" id="sum-task-rows">sum-task-rows</span>
+                                        <i class="fas fa-chevron-left" id="prev" onclick="TodoView.showPrev()"></i>
+                                        <i class="fas fa-chevron-right" id="next" onclick="TodoView.showNext()"></i>
+                                    </td>
+                                </tr>
+                            </tfoot>
 
                         </table>
 

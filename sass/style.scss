@@ -139,6 +139,33 @@ $checked-checkbox-color: #f79818;
     }
 }
 
+/*-----TFOOT STYLES-----*/
+
+tfoot {
+
+    .tfoot-row {
+        text-align: right;
+
+        .cell {
+
+            .num-task-rows {
+                padding: 0 5px;
+            }
+
+            .fas {
+                padding: 0 9px;
+            }
+        }
+    }
+
+    .page-size {
+        display: inline-block;
+        width: 10%;
+        border: none;
+        font-size: 14px;
+    }
+}
+
 /*-----MEDIA-----*/
 
 @media (max-width: 992px) {

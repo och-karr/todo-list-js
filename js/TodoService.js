@@ -29,6 +29,11 @@ var TodoService = (function (service) {
         task.isCompleted = isCompleted;
     }
 
+    service.getPaginatedTasks = function (tableSize, tableNumber) {
+
+        return tasks.slice((tableNumber - 1) * tableSize, tableNumber * tableSize);
+    }
+
     return service;
 
 })(TodoService || {});

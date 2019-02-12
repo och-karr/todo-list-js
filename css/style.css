@@ -40,6 +40,12 @@
 
 .task-row:hover .trash-visible { display: block; cursor: pointer; font-size: 18px; line-height: 45px; height: 45px; }
 
+tfoot .tfoot-row { text-align: right; }
+
+tfoot .page-size { display: inline-block; width: 10%; border: none; }
+
+tfoot .from-task-rows, tfoot .to-task-rows { padding: 0 5px; }
+
 /*-----MEDIA-----*/
 @media (max-width: 992px) { .task-container .style-table .style-thead .style-heading-tr .task-name-th { width: 44%; }
   .task-container .style-table .style-thead .style-heading-tr .priority-th { width: 25%; } }
